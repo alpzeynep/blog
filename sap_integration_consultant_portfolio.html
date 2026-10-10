@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP Integration Consultant | Portfolio & Architecture Showcase</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sap: {
+                            gold: '#F0AB00',
+                            blue: '#0A6ED1',
+                            darkBlue: '#0854A0',
+                            navy: '#0b1329',
+                            dark: '#030712',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            accent: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and glow effects */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0A6ED1;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .glow-accent {
+            box-shadow: 0 0 25px -5px rgba(10, 110, 209, 0.35);
+        }
+        .pipeline-line {
+            background: linear-gradient(90deg, #0A6ED1 0%, #38bdf8 50%, #0A6ED1 100%);
+            background-size: 200% auto;
+            animation: flowAnimation 3s linear infinite;
+        }
+        @keyframes flowAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-sap-dark text-slate-100 font-sans antialiased selection:bg-sap-blue selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sap-blue to-sap-accent flex items-center justify-center font-mono font-bold text-lg text-white shadow-lg shadow-sap-blue/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-network-wired text-sm"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+                        Integration<span class="text-sap-accent font-mono font-medium">.Consultant</span>
+                    </span>
+                    <span class="text-[11px] block text-slate-400 font-mono tracking-wider -mt-1">SAP BTP & PO/PI SPECIALIST</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-sap-accent transition-colors">About</a>
+                <a href="#skills" class="hover:text-sap-accent transition-colors">Skills</a>
+                <a href="#architecture" class="hover:text-sap-accent transition-colors">Architectures</a>
+                <a href="#simulator" class="hover:text-sap-accent transition-colors">iFlow Lab</a>
+                <a href="#experience" class="hover:text-sap-accent transition-colors">Timeline</a>
+                <a href="#contact" class="hover:text-sap-accent transition-colors">Contact</a>
+            </nav>
+
+            <!-- Social Links & Action -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://github.com" target="_blank" rel="noreferrer" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-sap-accent/50 transition-all" title="GitHub">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-sap-blue hover:border-sap-blue/50 transition-all" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+                </a>
+                <a href="#contact" class="ml-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-sap-blue hover:bg-sap-darkBlue text-white rounded-xl shadow-md transition-all hover:shadow-sap-blue/30">
+                    Hire / Connect
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2 text-xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobileMenu" class="hidden md:hidden bg-sap-card/95 border-b border-slate-800 px-6 py-6 transition-all space-y-4 text-sm font-medium">
+            <a href="#about" class="block text-slate-200 hover:text-sap-accent">About</a>
+            <a href="#skills" class="block text-slate-200 hover:text-sap-accent">Skills</a>
+            <a href="#architecture" class="block text-slate-200 hover:text-sap-accent">Architectures</a>
+            <a href="#simulator" class="block text-slate-200 hover:text-sap-accent">iFlow Lab</a>
+            <a href="#experience" class="block text-slate-200 hover:text-sap-accent">Timeline</a>
+            <a href="#contact" class="block text-slate-200 hover:text-sap-accent">Contact</a>
+            <div class="pt-4 border-t border-slate-800 flex gap-4">
+                <a href="https://github.com" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-white flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-sap-blue flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative pt-36 pb-20 overflow-hidden">
+        <!-- Radial Background Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sap-blue/15 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-sap-blue/40 text-xs font-mono text-sap-accent">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Available for Enterprise Cloud & Hybrid Integrations</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Bridging Enterprise <br class="hidden sm:inline" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sap-accent via-blue-400 to-sap-blue">
+                            SAP Ecosystems
+                        </span> With Cloud Scale.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+                        Senior SAP Integration Consultant specialized in <strong>SAP BTP Integration Suite (Cloud Integration / CPI)</strong>, 
+                        <strong>SAP PO/PI</strong>, and Event-Driven Architectures. Designing bulletproof iFlows, hybrid pipelines, and high-volume B2B/EDI interfaces across global ERP landscapes.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#architecture" class="px-6 py-3.5 rounded-xl bg-sap-blue hover:bg-sap-darkBlue text-white font-medium text-sm transition-all shadow-lg shadow-sap-blue/25 hover:shadow-sap-blue/40 flex items-center gap-2">
+                            <span>Explore Architectures</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#simulator" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-medium text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-sap-accent text-xs"></i>
+                            <span>Open iFlow Studio</span>
+                        </a>
+                        <button onclick="downloadResume()" class="px-5 py-3.5 rounded-xl border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down text-xs"></i>
+                            <span>Save Profile</span>
+                        </button>
+                    </div>
+
+                    <!-- Tech Badge Ticker -->
+                    <div class="pt-6 border-t border-slate-800/80">
+                        <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3">Primary Tech Stack & Protocols</p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">BTP CPI</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">PO 7.5 Dual/Single</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">Cloud Connector</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">Groovy Script</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">OData / REST</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">IDoc & RFC</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">OAuth 2.0 / MTLS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Interactive Live Integration Card -->
+                <div class="w-full lg:w-2/5">
+                    <div class="relative glass-panel rounded-2xl p-6 glow-accent border border-slate-700/60 shadow-2xl">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                <span class="text-xs font-mono text-slate-400 ml-2">tenant: cpi-prod-eu10</span>
+                            </div>
+                            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded">STATUS: DEPLOYED</span>
+                        </div>
+
+                        <!-- Mini Mock Architecture Graph -->
+                        <div class="space-y-3 font-mono text-xs">
+                            <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-cloud-arrow-up text-sap-accent"></i>
+                                    <div>
+                                        <p class="text-white font-medium">Salesforce CRM</p>
+                                        <p class="text-[10px] text-slate-400">REST (JSON / Bearer)</p>
+                                    </div>
+                                </div>
+                                <span class="text-emerald-400 text-[10px]">200 OK</span>
+                            </div>
+
+                            <div class="flex justify-center text-slate-500">
+                                <i class="fa-solid fa-arrow-down text-sap-blue"></i>
+                            </div>
+
+                            <div class="p-3 bg-sap-navy/70 border border-sap-blue/40 rounded-xl">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="text-white font-semibold flex items-center gap-2">
+                                        <i class="fa-solid fa-gears text-sap-gold"></i> SAP Cloud Integration
+                                    </span>
+                                    <span class="text-[10px] text-sap-accent">Execution: 142ms</span>
+                                </div>
+                                <div class="text-[11px] text-slate-300 space-y-1">
+                                    <p class="text-slate-400">1. OAuth2 Validation & Header Store</p>
+                                    <p class="text-slate-400">2. Groovy: Custom Payload Flattening</p>
+                                    <p class="text-slate-400">3. Cloud Connector RFC mapping</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center text-slate-500">
+                                <i class="fa-solid fa-arrow-down text-sap-blue"></i>
+                            </div>
+
+                            <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-database text-sap-blue"></i>
+                                    <div>
+                                        <p class="text-white font-medium">SAP S/4HANA On-Premise</p>
+                                        <p class="text-[10px] text-slate-400">RFC / BAPI_SALESORDER_CREATE</p>
+                                    </div>
+                                </div>
+                                <span class="text-sap-accent text-[10px]">PROCESSED</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats Row Inside Card -->
+                        <div class="grid grid-cols-3 gap-2 mt-5 pt-4 border-t border-slate-800 text-center">
+                            <div>
+                                <span class="block text-xl font-bold text-white">120+</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-mono">Prod iFlows</span>
+                            </div>
+                            <div>
+                                <span class="block text-xl font-bold text-sap-accent">99.9%</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-mono">SLA Uptime</span>
+                            </div>
+                            <div>
+                                <span class="block text-xl font-bold text-emerald-400">10M+</span>
+                                <span class="text-[10px] text-slate-400 uppercase font-mono">Msgs / Month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skills Section -->
+    <section id="skills" class="py-20 bg-slate-950/60 border-t border-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-sap-accent mb-2">Technical Competency</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Full-Stack SAP Integration Domain</h3>
+                <p class="text-slate-400 text-sm mt-3">Comprehensive expertise spanning legacy SAP on-premise engines to modern SAP BTP cloud-native integration suites.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1: SAP Platforms -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-sap-blue/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-sap-blue/20 text-sap-accent flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">SAP Platforms</h4>
+                    <p class="text-xs text-slate-400 mb-4">Core middleware systems, hybrid connectors and API gateway layers.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> SAP BTP Integration Suite</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Cloud Integration (CPI)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> SAP PO 7.5 (Dual & Single Stack)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> SAP Cloud Connector (SCC)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> SAP API Management</li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: Protocols & Adapters -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-sap-blue/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Protocols & Adapters</h4>
+                    <p class="text-xs text-slate-400 mb-4">Heterogeneous system connectivity for cloud, on-prem, and 3rd parties.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> REST, HTTP/HTTPS, SOAP</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> OData v2 & v4 Services</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> IDoc / RFC / BAPI Handlers</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> SFTP, FTPS, AS2 (EDI)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Event Mesh & AMQP / Kafka</li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Scripting & Mapping -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-sap-blue/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-sap-gold flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Scripting & Mapping</h4>
+                    <p class="text-xs text-slate-400 mb-4">Payload transformations, dynamic properties, and complex mapping rules.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Groovy Scripting for CPI</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> XSLT 1.0, 2.0 & 3.0</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Message & Graphical Mapping</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Value Mapping & Partner Directory</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> XML, JSON, CSV, EDIFACT</li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: DevOps & Monitoring -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-sap-blue/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">DevOps & Governance</h4>
+                    <p class="text-xs text-slate-400 mb-4">Testing suites, continuous integration, trace analysis, and security.</p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Postman & SoapUI Automations</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> CPI Message Monitoring & Trace</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> OAuth2, Client Certs, KeyStore</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Figaf / CI-CD for Integration</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> SAP PO Migration Assessment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Integration Architectures -->
+    <section id="architecture" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-sap-accent mb-2">Production Blueprint Cases</h2>
+                    <h3 class="text-3xl font-bold text-white">Integration Architectures Delivered</h3>
+                </div>
+                <p class="text-xs font-mono text-slate-400 mt-2 md:mt-0">Click any card to inspect the message routing & payload transformation details.</p>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Scenario 1 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-950/80 border border-blue-800 text-sap-accent">Hybrid Cloud Sync</span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> Live System</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Salesforce to SAP S/4HANA Order Creation</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Asynchronous & synchronous bidirectional order processing. Ingests high-frequency webhooks via REST, utilizes dynamic deduplication in CPI DataStore, performs custom Groovy mapping, and executes BAPI call through SAP Cloud Connector.
+                        </p>
+
+                        <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 font-mono text-xs text-slate-300 mb-4 space-y-1">
+                            <div class="text-slate-400 font-semibold mb-1">Architecture Pipeline:</div>
+                            <div class="flex items-center flex-wrap gap-1 text-[11px]">
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-white">REST / HTTPS</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-sap-accent">Groovy Enricher</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-sap-gold">Cloud Connector</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-emerald-400">S/4HANA RFC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Exception Handling: JMS Dead-Letter Queue</span>
+                        <button onclick="openModal('salesforce-s4')" class="text-xs font-mono text-sap-accent hover:text-white flex items-center gap-1.5 transition-colors">
+                            <span>Deep Dive</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scenario 2 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-950/80 border border-amber-800 text-sap-gold">Legacy Modernization</span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> Migration Completed</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">SAP PO 7.5 Dual-Stack to BTP Cloud Integration Migration</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Migration of 75+ interfaces from on-premise SAP Process Orchestration to SAP Integration Suite. Replaced legacy UDFs (User-Defined Functions) with reusable Groovy libraries, re-factored IDoc adapters to Cloud Connector, and streamlined alert rules.
+                        </p>
+
+                        <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 font-mono text-xs text-slate-300 mb-4 space-y-1">
+                            <div class="text-slate-400 font-semibold mb-1">Architecture Pipeline:</div>
+                            <div class="flex items-center flex-wrap gap-1 text-[11px]">
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-white">SAP PO ICOs</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-sap-accent">CPI Package Re-architect</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-emerald-400">Partner Directory</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Zero-downtime cutover strategy</span>
+                        <button onclick="openModal('po-migration')" class="text-xs font-mono text-sap-accent hover:text-white flex items-center gap-1.5 transition-colors">
+                            <span>Deep Dive</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scenario 3 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-purple-950/80 border border-purple-800 text-purple-300">B2B / EDI Standard</span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> Global Supply Chain</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Automated EDIFACT ORDERS to SAP IDoc (ORDERS05)</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            AS2 / SFTP incoming partner purchase orders converted from EDI D96A/D01B to SAP IDoc. Features dynamic partner lookup via Partner Directory, duplicate interchange control, and automated MDN acknowledgement.
+                        </p>
+
+                        <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 font-mono text-xs text-slate-300 mb-4 space-y-1">
+                            <div class="text-slate-400 font-semibold mb-1">Architecture Pipeline:</div>
+                            <div class="flex items-center flex-wrap gap-1 text-[11px]">
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-white">AS2 Inbound</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-purple-300">EDI Splitter & Mapping</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-emerald-400">SAP IDoc Adapter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">99.98% Processing Success Rate</span>
+                        <button onclick="openModal('b2b-edi')" class="text-xs font-mono text-sap-accent hover:text-white flex items-center gap-1.5 transition-colors">
+                            <span>Deep Dive</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scenario 4 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-950/80 border border-emerald-800 text-emerald-400">Event-Driven Architecture</span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-regular fa-clock"></i> Real-time Telemetry</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">IoT & Kafka Event Mesh to SAP Maintenance Notification</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            High-throughput sensor event processing. Sensor thresholds trigger AMQP messages consumed by SAP CPI, which aggregates telemetry, filters anomalies with Groovy scripts, and invokes SAP PM (Plant Maintenance) OData services.
+                        </p>
+
+                        <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800 font-mono text-xs text-slate-300 mb-4 space-y-1">
+                            <div class="text-slate-400 font-semibold mb-1">Architecture Pipeline:</div>
+                            <div class="flex items-center flex-wrap gap-1 text-[11px]">
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-white">Kafka / AMQP</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-sap-accent">CPI Aggregator</span>
+                                <span>&rarr;</span>
+                                <span class="bg-slate-800 px-2 py-0.5 rounded text-emerald-400">S/4HANA OData v4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Handles peak loads of 4.5k msg/sec</span>
+                        <button onclick="openModal('iot-kafka')" class="text-xs font-mono text-sap-accent hover:text-white flex items-center gap-1.5 transition-colors">
+                            <span>Deep Dive</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive iFlow Studio & Groovy Sandbox -->
+    <section id="simulator" class="py-20 bg-slate-950/70 border-y border-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-sap-blue/20 text-sap-accent border border-sap-blue/30 inline-block mb-3">Live Integration Sandbox</span>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Interactive iFlow & Script Viewer</h3>
+                <p class="text-slate-400 text-sm mt-3">Select typical integration patterns to inspect the execution pipeline step-by-step and inspect real production-ready Groovy scripts.</p>
+            </div>
+
+            <!-- Scenario Selection Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="switchPattern('rest-to-soap')" id="btn-rest-to-soap" class="pattern-btn px-4 py-2.5 rounded-xl text-xs font-mono font-medium border bg-sap-blue text-white border-sap-blue transition-all">
+                    REST to SOAP (Header Injection)
+                </button>
+                <button onclick="switchPattern('json-to-xml')" id="btn-json-to-xml" class="pattern-btn px-4 py-2.5 rounded-xl text-xs font-mono font-medium border bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700 transition-all">
+                    Custom Groovy JSON-to-XML
+                </button>
+                <button onclick="switchPattern('jwt-oauth')" id="btn-jwt-oauth" class="pattern-btn px-4 py-2.5 rounded-xl text-xs font-mono font-medium border bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700 transition-all">
+                    Dynamic OAuth2 Token Cache
+                </button>
+                <button onclick="switchPattern('custom-exception')" id="btn-custom-exception" class="pattern-btn px-4 py-2.5 rounded-xl text-xs font-mono font-medium border bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700 transition-all">
+                    Exception Subprocess Alerting
+                </button>
+            </div>
+
+            <!-- Visual Flow Box -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 mb-6">
+                <div class="text-xs font-mono uppercase text-slate-400 mb-4 flex items-center justify-between">
+                    <span><i class="fa-solid fa-diagram-project text-sap-accent mr-1.5"></i> CPI Message Execution Pipeline</span>
+                    <span id="currentFlowTag" class="text-sap-accent">REST / HTTPS -> SOAP 1.2 Pipeline</span>
+                </div>
+
+                <!-- Pipeline Steps (Responsive) -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center font-mono text-xs" id="flowPipelineSteps">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Code & Inspector Box -->
+            <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+                <div class="bg-slate-900/90 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                        <span id="scriptFileName" class="font-mono text-xs text-slate-300 font-semibold">TransformPayload.groovy</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="copySnippet()" class="text-xs font-mono text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-all flex items-center gap-1.5">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copyBtnText">Copy Script</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Code Pre Block -->
+                <div class="p-6 overflow-x-auto bg-[#070d19]">
+                    <pre><code id="scriptCodeDisplay" class="font-mono text-xs text-emerald-400/90 leading-relaxed block">/* Loading Groovy Script... */</code></pre>
+                </div>
+
+                <!-- Script Explanation Footer -->
+                <div class="bg-slate-900/50 p-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-start gap-3">
+                    <i class="fa-solid fa-circle-info text-sap-accent mt-0.5"></i>
+                    <p id="scriptExplanation">
+                        This Groovy script operates within the SAP CPI Message API, extracting JSON properties, sanitizing data, setting outgoing header tokens, and preparing XML or JSON for downstream receivers without payload truncation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Migration Timeline -->
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-sap-accent mb-2">Professional Journey</h2>
+                <h3 class="text-3xl font-bold text-white">Experience & Milestone Engagements</h3>
+                <p class="text-slate-400 text-sm mt-3">A consistent track record of enterprise integration rollouts, cloud migrations, and mission-critical 24/7 hypercare support.</p>
+            </div>
+
+            <!-- Timeline items -->
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+                <!-- Timeline 1 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sap-blue border-4 border-sap-dark"></div>
+                    <div class="md:absolute md:-left-36 md:text-right top-1 font-mono text-xs text-sap-accent font-semibold">
+                        2022 - PRESENT
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-white">Lead SAP Integration Consultant</h4>
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono bg-sap-blue/20 text-sap-accent rounded-full border border-sap-blue/40">Global Enterprise Client</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3 font-mono">SAP BTP Integration Suite • Cloud Connector • S/4HANA Migration</p>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Spearheading enterprise integration landscape transformation from legacy SAP PO 7.5 to SAP BTP Cloud Integration. Designed reusable governance patterns, Partner Directory architecture, and automated notification frameworks.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                            <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800">80+ iFlows in Production</span>
+                            <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800">Migration Factory Model</span>
+                            <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800">Groovy Framework</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline 2 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-sap-dark"></div>
+                    <div class="md:absolute md:-left-36 md:text-right top-1 font-mono text-xs text-slate-400 font-semibold">
+                        2019 - 2022
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-white">Senior SAP PO / PI & CPI Developer</h4>
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono bg-slate-800 text-slate-300 rounded-full border border-slate-700">Consulting & Systems Integration</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3 font-mono">SAP PO 7.5 (AEX) • B2B Add-on • ESR / ID • Web Services</p>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Developed and maintained B2B EDI connections (ORDERS, DESADV, INVOIC) using AS2 and SFTP. Implemented complex Java UDFs and graphical mappings, monitored daily interface queues, and resolved transmission errors during peak commercial periods.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                            <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800">EDIFACT / ANSI X12</span>
+                            <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800">Dual-Stack Optimization</span>
+                            <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800">IDoc Orchestration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline 3 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-sap-dark"></div>
+                    <div class="md:absolute md:-left-36 md:text-right top-1 font-mono text-xs text-slate-400 font-semibold">
+                        2016 - 2019
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-white">SAP PI / Integration Specialist</h4>
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono bg-slate-800 text-slate-300 rounded-full border border-slate-700">Technology Services</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3 font-mono">SAP PI 7.31 • RFC • JDBC • SOAP • File Adapters</p>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Designed standard ERP integration scenarios connecting SAP ECC 6.0 with logistics warehouses and legacy banking portals. Configured end-to-end alert configurations and conducted rigorous performance tuning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Consultation Section -->
+    <section id="contact" class="py-20 bg-slate-950/80 border-t border-slate-900 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 inline-block mb-3">
+                Let's Discuss Your Integration Roadmap
+            </span>
+            <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4">Have an SAP Integration or PO Migration in Mind?</h3>
+            <p class="text-slate-400 text-sm max-w-xl mx-auto mb-10">
+                Whether you are evaluating a migration from SAP PO to SAP Integration Suite (CPI), resolving interface bottlenecks, or architecting complex B2B EDI channels, feel free to reach out.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+                <a href="mailto:sap.integration.consultant@example.com" class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-sap-blue/60 transition-all flex flex-col items-center group">
+                    <div class="w-10 h-10 rounded-xl bg-sap-blue/20 text-sap-accent flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">Direct Email</span>
+                    <span class="text-sm font-semibold text-white mt-1">Get in Touch</span>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-sap-blue/60 transition-all flex flex-col items-center group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">Professional Network</span>
+                    <span class="text-sm font-semibold text-white mt-1">Connect on LinkedIn</span>
+                </a>
+
+                <a href="https://github.com" target="_blank" rel="noreferrer" class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-sap-blue/60 transition-all flex flex-col items-center group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">Code Repositories</span>
+                    <span class="text-sm font-semibold text-white mt-1">GitHub Profile</span>
+                </a>
+            </div>
+
+            <!-- Quick Copy Email Button -->
+            <div class="inline-flex items-center gap-3 p-2 bg-slate-900 border border-slate-800 rounded-xl text-xs font-mono text-slate-300">
+                <span>sap.integration.consultant@example.com</span>
+                <button onclick="copyEmail()" class="px-3 py-1 bg-sap-blue hover:bg-sap-darkBlue text-white rounded-lg transition-colors font-sans font-medium" id="emailCopyBtn">
+                    Copy Email
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-sap-dark border-t border-slate-900 text-center text-xs font-mono text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>SAP BTP & PO/PI Integration Consultant Portfolio</span>
+            </div>
+            <div>
+                Hosted on <a href="https://pages.github.com/" class="text-sap-accent hover:underline">GitHub Pages</a> • Built with HTML5 & Tailwind
+            </div>
+        </div>
+    </footer>
+
+    <!-- Architecture Details Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="glass-panel max-w-2xl w-full rounded-2xl border border-slate-700 p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                <h4 id="modalTitle" class="text-lg font-bold text-white">Interface Architecture Scenario</h4>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white text-lg p-1" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="modalBody" class="text-sm text-slate-300 space-y-4">
+                <!-- Dynamically updated -->
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-mono">
+                    Close Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 border border-sap-accent text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-xs font-mono">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toastText">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Data for Interactive iFlow Studio
+        const scenarios = {
+            'rest-to-soap': {
+                name: 'REST to SOAP (Header Injection & Transformation)',
+                filename: 'RestToSoapEnricher.groovy',
+                steps: [
+                    { icon: 'fa-globe', name: 'Sender (REST)' },
+                    { icon: 'fa-filter', name: 'JSON Validator' },
+                    { icon: 'fa-code', name: 'Groovy Script' },
+                    { icon: 'fa-sliders', name: 'Content Modifier' },
+                    { icon: 'fa-repeat', name: 'Request-Reply' },
+                    { icon: 'fa-server', name: 'SOAP 1.2 ERP' }
+                ],
+                explanation: 'Extracts authorization and tracking headers from inbound REST payload, checks request body, dynamically sets SOAP action header, and handles SOAP envelope structure before dispatching through Cloud Connector.',
+                code: `import com.sap.gateway.ip.core.customdev.util.Message
+import groovy.json.JsonSlurper
+import groovy.xml.MarkupBuilder
+
+def Message processData(Message message) {
+    // 1. Ingest input payload (JSON)
+    def body = message.getBody(java.lang.String) as String
+    def jsonSlurper = new JsonSlurper()
+    def requestData = jsonSlurper.parseText(body)
+
+    // 2. Read headers & custom properties
+    def correlationId = message.getHeader("SAP_MessageProcessingLogID", String)
+    def orderId = requestData.orderHeader?.id ?: "UNKNOWN"
+
+    // 3. Set dynamic runtime properties for monitoring & tracking
+    message.setProperty("Tracking_OrderId", orderId)
+    message.setHeader("SOAPAction", "urn:sap-com:document:sap:rfc:functions:CREATE_ORDER")
+
+    // 4. Transform into target SOAP Request XML
+    def writer = new StringWriter()
+    def xml = new MarkupBuilder(writer)
+    
+    xml.'soapenv:Envelope'('xmlns:soapenv': 'http://schemas.xmlsoap.org/soap/envelope/',
+                           'xmlns:urn': 'urn:sap-com:document:sap:rfc:functions') {
+        'soapenv:Header'()
+        'soapenv:Body' {
+            'urn:BAPI_SALESORDER_CREATEFROMDAT2' {
+                'ORDER_HEADER_IN' {
+                    'DOC_TYPE'('TA')
+                    'SALES_ORG'(requestData.orderHeader?.salesOrg ?: '1000')
+                    'PURCH_NO_C'(orderId)
+                }
+            }
+        }
+    }
+
+    message.setBody(writer.toString())
+    return message
+}`
+            },
+            'json-to-xml': {
+                name: 'Custom Groovy JSON to XML Converter',
+                filename: 'CustomJsonToXmlConverter.groovy',
+                steps: [
+                    { icon: 'fa-cloud', name: 'Inbound Webhook' },
+                    { icon: 'fa-code', name: 'Groovy Script' },
+                    { icon: 'fa-file-lines', name: 'XML Schema Match' },
+                    { icon: 'fa-shield-halved', name: 'Sign & Hash' },
+                    { icon: 'fa-share-nodes', name: 'Process Direct' },
+                    { icon: 'fa-database', name: 'S/4HANA OData' }
+                ],
+                explanation: 'Performs flexible JSON to XML parsing when standard CPI JSON-to-XML converter fails on edge cases like dynamic nested arrays, date formatting, and null element suppression.',
+                code: `import com.sap.gateway.ip.core.customdev.util.Message
+import groovy.json.JsonSlurper
+import groovy.xml.MarkupBuilder
+
+def Message processData(Message message) {
+    def body = message.getBody(String)
+    def parser = new JsonSlurper()
+    def json = parser.parseText(body)
+
+    def writer = new StringWriter()
+    def xml = new MarkupBuilder(writer)
+
+    xml.'ns1:BusinessPartnerSyncRequest'('xmlns:ns1': 'http://company.com/sap/bp') {
+        'Header' {
+            'SourceSystem'('SALESFORCE_EU')
+            'Timestamp'(new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'"))
+        }
+        'Customers' {
+            json.accounts.each { acc ->
+                'Customer' {
+                    'ExternalID'(acc.Id)
+                    'Name'((acc.FirstName ? acc.FirstName + " " : "") + acc.LastName)
+                    'Email'(acc.Email ?: "no-reply@client.com")
+                    'Active'(acc.IsActive ? "1" : "0")
+                }
+            }
+        }
+    }
+
+    message.setBody(writer.toString())
+    message.setHeader("Content-Type", "application/xml; charset=UTF-8")
+    return message
+}`
+            },
+            'jwt-oauth': {
+                name: 'Dynamic OAuth2 Bearer Token Extraction & Cache',
+                filename: 'OAuthTokenManager.groovy',
+                steps: [
+                    { icon: 'fa-network-wired', name: 'Timer / Poll' },
+                    { icon: 'fa-key', name: 'Secure KeyStore' },
+                    { icon: 'fa-arrow-right-arrow-left', name: 'Token Endpoint' },
+                    { icon: 'fa-database', name: 'DataStore Cache' },
+                    { icon: 'fa-code', name: 'Groovy Header Set' },
+                    { icon: 'fa-cloud', name: 'Target REST API' }
+                ],
+                explanation: 'Checks whether a valid token exists in the CPI DataStore/Global cache; if expired or absent, performs an authorization handshake and stores the new bearer token safely.',
+                code: `import com.sap.gateway.ip.core.customdev.util.Message
+import com.sap.it.api.securestore.SecureStoreService
+import com.sap.it.api.securestore.AccessTokenProvider
+import com.sap.it.api.ITApiFactory
+
+def Message processData(Message message) {
+    // Access secure credentials safely without hardcoding
+    def secureService = ITApiFactory.getService(SecureStoreService.class, null)
+    
+    // Retrieve credential credentials stored in CPI Security Material
+    def credential = secureService.getUserCredential("SF_REST_OAUTH_ALIAS")
+    def clientId = credential.getUsername()
+    def clientSecret = new String(credential.getPassword())
+
+    // Store in properties for subsequent HTTP receiver channel
+    message.setProperty("OAuth_ClientId", clientId)
+    message.setProperty("OAuth_Secret", clientSecret)
+    
+    // Append trace context header
+    message.setHeader("X-Correlation-ID", UUID.randomUUID().toString())
+    
+    return message
+}`
+            },
+            'custom-exception': {
+                name: 'Exception Subprocess Alert & Diagnostics',
+                filename: 'ExceptionDiagnosticHandler.groovy',
+                steps: [
+                    { icon: 'fa-triangle-exclamation', name: 'Exception Sub' },
+                    { icon: 'fa-file-lines', name: 'Log MPL Error' },
+                    { icon: 'fa-code', name: 'Groovy Diagnostics' },
+                    { icon: 'fa-envelope-open-text', name: 'Build Alert Mail' },
+                    { icon: 'fa-paper-plane', name: 'Mail / Teams Webhook' },
+                    { icon: 'fa-ban', name: 'Error End Event' }
+                ],
+                explanation: 'Intercepts iFlow failures in the Exception Subprocess, extracts underlying Java stack traces, attaches failed payloads to Message Processing Logs (MPL), and fires clean alert payloads to monitoring tools.',
+                code: `import com.sap.gateway.ip.core.customdev.util.Message
+
+def Message processData(Message message) {
+    // 1. Retrieve runtime exception from Camel Context
+    def ex = message.getProperty("CamelExceptionCaught", Exception)
+    def mpl = messageLogFactory.getMessageLog(message)
+    
+    if (ex) {
+        def errorMessage = ex.getMessage() ?: "Unspecified integration error"
+        def errorType = ex.getClass().getName()
+        
+        // Log custom attributes to SAP CPI MPL
+        if (mpl) {
+            mpl.addCustomHeaderProperty("FailedAtStep", "SAP_Backend_RequestReply")
+            mpl.addCustomHeaderProperty("RootCause", errorType)
+            
+            // Attach payload snapshot safely
+            def body = message.getBody(String) ?: "Empty Body"
+            mpl.addAttachmentAsString("Failed_Payload_Snapshot", body, "text/plain")
+        }
+        
+        // Construct notification body
+        def alertPayload = """
+        [CRITICAL INTEGRATION FAILURE]
+        Interface: Salesforce_To_S4_Orders
+        Time: \${new Date().toString()}
+        Exception: \${errorType}
+        Details: \${errorMessage}
+        """
+        
+        message.setProperty("NotificationBody", alertPayload)
+    }
+    
+    return message
+}`
+            }
+        };
+
+        // Render Pattern Function
+        function switchPattern(key) {
+            const pattern = scenarios[key];
+            if (!pattern) return;
+
+            // Update tab button styles
+            document.querySelectorAll('.pattern-btn').forEach(btn => {
+                btn.classList.remove('bg-sap-blue', 'text-white', 'border-sap-blue');
+                btn.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-800');
+            });
+            const activeBtn = document.getElementById(`btn-${key}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-800');
+                activeBtn.classList.add('bg-sap-blue', 'text-white', 'border-sap-blue');
+            }
+
+            // Update Flow Header
+            document.getElementById('currentFlowTag').textContent = pattern.name;
+            document.getElementById('scriptFileName').textContent = pattern.filename;
+            document.getElementById('scriptCodeDisplay').textContent = pattern.code;
+            document.getElementById('scriptExplanation').textContent = pattern.explanation;
+
+            // Render Steps
+            const stepsContainer = document.getElementById('flowPipelineSteps');
+            stepsContainer.innerHTML = '';
+            pattern.steps.forEach((step, index) => {
+                const stepEl = document.createElement('div');
+                stepEl.className = 'p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex flex-col items-center justify-center gap-2 group hover:border-sap-blue transition-all';
+                stepEl.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-sap-accent group-hover:scale-110 transition-transform">
+                        <i class="fa-solid ${step.icon}"></i>
+                    </div>
+                    <span class="text-[11px] text-slate-300 font-semibold">${step.name}</span>
+                    <span class="text-[9px] text-slate-400">Step ${index + 1}</span>
+                `;
+                stepsContainer.appendChild(stepEl);
+            });
+        }
+
+        // Copy Code Snippet
+        function copySnippet() {
+            const code = document.getElementById('scriptCodeDisplay').textContent;
+            executeCopy(code, "Groovy script copied to clipboard!");
+            const btnText = document.getElementById('copyBtnText');
+            btnText.textContent = "Copied!";
+            setTimeout(() => { btnText.textContent = "Copy Script"; }, 2000);
+        }
+
+        // Copy Email
+        function copyEmail() {
+            executeCopy("sap.integration.consultant@example.com", "Consultant email copied!");
+            const btn = document.getElementById('emailCopyBtn');
+            btn.textContent = "Copied!";
+            setTimeout(() => { btn.textContent = "Copy Email"; }, 2000);
+        }
+
+        // Helper for clipboard actions
+        function executeCopy(text, toastMsg) {
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            temp.style.position = "fixed";
+            temp.style.opacity = "0";
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand("copy");
+                showToast(toastMsg);
+            } catch (err) {
+                console.error("Clipboard copy failed", err);
+            }
+            document.body.removeChild(temp);
+        }
+
+        // Toast feedback
+        function showToast(msg) {
+            const toast = document.getElementById('toastMessage');
+            const toastText = document.getElementById('toastText');
+            toastText.textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Modal Data for Project Architecture Deep Dives
+        const modalContent = {
+            'salesforce-s4': {
+                title: 'Salesforce CRM to SAP S/4HANA Order Creation',
+                content: `
+                    <p><strong>Business Context:</strong> High-volume B2B orders originating in Salesforce require immediate, guaranteed-delivery creation of Sales Documents in SAP S/4HANA with order confirmation IDs returned in seconds.</p>
+                    <p><strong>Technical Components:</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 font-mono text-xs text-slate-300">
+                        <li>Inbound: HTTPS / REST API with OAuth2 Bearer validation</li>
+                        <li>Transformation: Groovy script for business partner identification & currency standardization</li>
+                        <li>On-Premise Tunnel: SAP Cloud Connector (High Availability Pair) with Principal Propagation</li>
+                        <li>Target: RFC / BAPI_SALESORDER_CREATEFROMDAT2 via SAP CPI RFC Adapter</li>
+                        <li>Resilience: JMS Queue fallback with automatic retry count and dead-letter alert routing</li>
+                    </ul>
+                    <p><strong>Outcomes:</strong> Average processing latency reduced from 4.2 seconds to 450ms, processing over 12,000 daily orders without payload loss.</p>
+                `
+            },
+            'po-migration': {
+                title: 'SAP PO 7.5 to SAP Integration Suite Migration',
+                content: `
+                    <p><strong>Business Context:</strong> Corporate-wide initiative to transition from on-premise SAP PO 7.5 dual-stack instances before End-of-Life to cloud-native SAP BTP Cloud Integration.</p>
+                    <p><strong>Migration Methodology:</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 font-mono text-xs text-slate-300">
+                        <li>Assessment: Interface categorisation (Pass-through, Classic Mapping, Complex BPM)</li>
+                        <li>Mapping Conversion: Reused graphical mappings and translated Java UDFs into standard Groovy scripts</li>
+                        <li>Decoupling: Transitioned Point-to-Point configurations to SAP BTP Partner Directory</li>
+                        <li>Automated Regression: Automated request/response comparisons using Postman test collections</li>
+                    </ul>
+                    <p><strong>Outcomes:</strong> Successfully migrated 75+ mission-critical interfaces within 6 months with zero unscheduled downtime.</p>
+                `
+            },
+            'b2b-edi': {
+                title: 'B2B EDIFACT Integration to SAP IDoc System',
+                content: `
+                    <p><strong>Business Context:</strong> Connecting global 3PL logistic providers and key enterprise retail buyers over standard EDIFACT formats (ORDERS, DESADV, INVOIC).</p>
+                    <p><strong>Technical Components:</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 font-mono text-xs text-slate-300">
+                        <li>AS2 / SFTP Adapters with SHA-256 digital signatures & MDN receipts</li>
+                        <li>EDI Splitter and Validation components inside SAP CPI Integration Suite</li>
+                        <li>Mapping to SAP ORDERS05 & DELVRY03 IDocs</li>
+                        <li>Custom partner lookup tables for vendor code translation</li>
+                    </ul>
+                    <p><strong>Outcomes:</strong> Eliminated manual order entry errors and reduced shipping ticket delays by 95%.</p>
+                `
+            },
+            'iot-kafka': {
+                title: 'Kafka & Event Mesh to SAP S/4HANA Telemetry',
+                content: `
+                    <p><strong>Business Context:</strong> Real-time processing of industrial IoT telemetry to automatically trigger work orders and maintenance notifications in SAP PM.</p>
+                    <p><strong>Technical Components:</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 font-mono text-xs text-slate-300">
+                        <li>AMQP / Kafka message broker ingesting sensor vibration and temperature anomalies</li>
+                        <li>SAP CPI Aggregator step bundling micro-readings into structured periodic batches</li>
+                        <li>S/4HANA Plant Maintenance (PM) creation via standard OData v4 API</li>
+                    </ul>
+                    <p><strong>Outcomes:</strong> Scaled to 4,500 messages per second during stress testing while protecting the ERP backend from connection exhaustion.</p>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const modal = document.getElementById('projectModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            
+            if (modalContent[key]) {
+                title.textContent = modalContent[key].title;
+                body.innerHTML = modalContent[key].content;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Download Mock Profile / Resume Notice
+        function downloadResume() {
+            showToast("Resume document reference triggered.");
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Initialize default sandbox pattern on load
+        window.addEventListener('DOMContentLoaded', () => {
+            switchPattern('rest-to-soap');
+        });
+    </script>
+</body>
+</html>
